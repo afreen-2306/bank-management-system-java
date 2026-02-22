@@ -2,8 +2,10 @@ package banking;
 import java.util.*;
 public class ATM 
 {
-	static int balance = 50000;
+	static int balance = 50000; //stores current account balance
 	static int pin=1234;
+	
+	//Method to withdraw money from the account
 	static void withdraw(Scanner sc) 
 	{
 		System.out.println("Enter amount: ");
@@ -14,7 +16,7 @@ public class ATM
 		{
 			if(amount <= balance)
 			{
-				balance -= amount;
+				balance -= amount; // Deduct amount from balance
 				System.out.println("Please collect your cash: "+ amount);
 			}
 			else
@@ -27,6 +29,7 @@ public class ATM
 			System.out.println("Incorrect PIN.");
 		}
 	}
+	// Method to deposit money into the account
 	static void deposit(Scanner sc) 
 	{
 		System.out.println("Enter amount to deposit: ");
@@ -35,7 +38,7 @@ public class ATM
 		int enteredPin = sc.nextInt();
 		if(enteredPin == pin)
 		{
-			balance +=amount;
+			balance +=amount; // add amount to balance
 			System.out.println("Amount depoisted successfully.");
 		}
 		else
@@ -43,6 +46,7 @@ public class ATM
 			System.out.println("Incorrect PIN.");
 		}
 	}
+	// Method to Change pin in account
 	static void changePin(Scanner sc) 
 	{
 		System.out.println("Enter  OLD PIN: ");
@@ -51,7 +55,7 @@ public class ATM
 		{
 			System.out.println("Enter NEW PIN: ");
 			int newPin = sc.nextInt();
-			pin=newPin;
+			pin=newPin; // changing OLD PIN into NEW PIN 
 			System.out.println("PIN changed successfully.");
 		}
 		else
@@ -59,13 +63,14 @@ public class ATM
 			System.out.println("Incorrect PIN.");
 		}
 	}
+	// Method to Check Balance in account
 	static void checkBalance(Scanner sc)
 	{
 		System.out.println("Enter PIN: ");
 		int enteredPin = sc.nextInt();
 		if(enteredPin == pin)
 		{
-			System.out.println("Balance is: "+balance);
+			System.out.println("Balance is: "+balance); // showing the balance in the account
 		}
 		else
 		{
