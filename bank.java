@@ -4,7 +4,7 @@ public class bank {
 
 	public static void main(String[] args) 
 	{
-		int pin=2123; //ATM pin
+		int pin=2123;
 		int option;
 		int eac;  //Enter ATM card
 		int balance=5000;
@@ -23,7 +23,7 @@ public class bank {
 		eac=sc.nextInt();
 		if (eac!=0)
 		{
-			 System.out.println("1.WITHDRAW\t 2.DEPOSIT\n 3.CHANGE PIN\t 4.CHECK BALANCE");
+			 System.out.println("1.WITHDRAW\t 2.DEPOSIT\n 3.CHANGE PIN\t 4.CHECK BALANCE\n 5.EXIT");
 			   System.out.println("ENTER OPTION:");
 			   option=sc.nextInt();
 			   switch(option)
@@ -39,7 +39,7 @@ public class bank {
 					   if(amount<=balance)
 					   {
 						   balance=balance-amount;
-						   System.out.println("PLEASE COLLECT YOUR AMOUNT"+amount);
+						   System.out.println("Please collect your amount:"+amount);
 					   }
 					   else
 					   {
@@ -119,6 +119,9 @@ public class bank {
 				       }
 			   }				  				
 			   break;
+			   case 5:// exit
+					   System.out.println("Thank you for using the ATM");
+					   System.exit(0);
 			  default:
 			   {
 				   System.out.println("INVALID OPTION");
@@ -128,4 +131,5 @@ public class bank {
 		}
 	}
 }
+
 
