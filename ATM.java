@@ -8,7 +8,7 @@ public class ATM
 	//Method to withdraw money from the account
 	static void withdraw(Scanner sc) 
 	{
-		System.out.println("Enter amount: ");
+		System.out.println("Enter amount to withdraw: ");
 		int amount = sc.nextInt();
 		System.out.println("Enter PIN: ");
 		int enteredPin = sc.nextInt();
@@ -70,7 +70,7 @@ public class ATM
 		int enteredPin = sc.nextInt();
 		if(enteredPin == pin)
 		{
-			System.out.println("Balance is: "+balance); // showing the balance in the account
+			System.out.println("Balance is the account is: "+balance); // showing the balance in the account
 		}
 		else
 		{
