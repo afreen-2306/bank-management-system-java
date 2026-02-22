@@ -5,14 +5,14 @@ public class bank {
 	public static void main(String[] args) 
 	{
 		int pin=2123; //ATM pin
-		int option; 
+		int option;
 		int eac;  //Enter ATM card
-		int balance=5000;//Enter amount
-		int amount;//user input
-		int PIN=0;//Enter pin
+		int balance=5000;
+		int amount;
+		int PIN=0;
 		int depositamount=0;
 		int i,count=0;
-		int newPIN;//new pin
+		int newPIN;
 		int re_enternewPIN;
 		int OTP=1234;
 		int userOTP;
@@ -128,3 +128,4 @@ public class bank {
 		}
 	}
 }
+
