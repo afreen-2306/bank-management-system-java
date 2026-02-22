@@ -5,17 +5,17 @@ public class bank {
 	public static void main(String[] args) 
 	{
 		int pin=2123; //ATM pin
-		int op;   //Option
+		int option; 
 		int eac;  //Enter ATM card
-		int ea=5000;//Enter amount
-		int ul;//user input
-		int ep=0;//Enter pin
-		int da=0;//deposit amount
+		int balance=5000;//Enter amount
+		int amount;//user input
+		int PIN=0;//Enter pin
+		int depositamount=0;
 		int i,count=0;
-		int np;//new pin
-		int rep;
+		int newPIN;//new pin
+		int re_enternewPIN;
 		int OTP=1234;
-		int uotp;
+		int userOTP;
 		Scanner sc=new Scanner(System.in);
 		while(true)
 		{
@@ -25,21 +25,21 @@ public class bank {
 		{
 			 System.out.println("1.WITHDRAW\t 2.DEPOSIT\n 3.CHANGE PIN\t 4.CHECK BALANCE");
 			   System.out.println("ENTER OPTION:");
-			   op=sc.nextInt();
-			   switch(op)
+			   option=sc.nextInt();
+			   switch(option)
 			   {
 			   case 1://withdraw
 			   {
 				   System.out.println("ENTER AMOUNT:");
-				   ul=sc.nextInt();
+				   amount=sc.nextInt();
 				   System.out.println("Enter pin:");
-				   ep=sc.nextInt();
-				   if(ep==pin)
+				   PIN=sc.nextInt();
+				   if(PIN==pin)
 				   {
-					   if(ul<=ea)
+					   if(amount<=balance)
 					   {
-						   ea=ea-ul;
-						   System.out.println("PLEASE COLLECT YOUR AMOUNT");
+						   balance=balance-amount;
+						   System.out.println("PLEASE COLLECT YOUR AMOUNT"+amount);
 					   }
 					   else
 					   {
@@ -55,13 +55,13 @@ public class bank {
 			   case 2://deposit
 			   {
 				   System.out.println("Enter Amount:");
-				   da=sc.nextInt();
+				   amount=sc.nextInt();
 				   System.out.println("Enter Pin:");
-				   ep=sc.nextInt();
-				   if(ep==pin)
+				   PIN=sc.nextInt();
+				   if(PIN==pin)
 				   {
-					   ea=ea+da;
-					   System.out.println("YOUR AMOUNT IS DEPOSITED: "+ea);
+					   balance=balance+amount;
+					   System.out.println("YOUR AMOUNT IS DEPOSITED: "+balance);
 					   break;
 				   }
 				   else
@@ -73,20 +73,20 @@ public class bank {
 			 case 3://change pin
 			   {
 				   System.out.println("Enter the old pin:");
-				   ep=sc.nextInt();
-				   if(ep==pin)
+				   PIN=sc.nextInt();
+				   if(PIN==pin)
 				   {
 					   System.out.println("Enter new pin:");
-					   np=sc.nextInt();
+					   newPIN=sc.nextInt();
 					   System.out.println("Re-enter new pin:");
-					   rep=sc.nextInt();
-					   if(np==rep)
+					   re_enternewPIN=sc.nextInt();
+					   if(newPIN==re_enternewPIN)
 					   {
 						   System.out.println("Enter OTP:");
-						   uotp=sc.nextInt();
-						   if(OTP==uotp)
+						   userOTP=sc.nextInt();
+						   if(OTP==userOTP)
 						   {
-							   pin=np;
+							   pin=newPIN;
 							   System.out.println("Successfully pin is changed");
 						   }
 						   else
@@ -108,14 +108,14 @@ public class bank {
 			   case 4://check balance
 			   {
 				   System.out.println("ENTER THE PIN:");
-				   ep=sc.nextInt();
-					   if(ep==pin)
+				   PIN=sc.nextInt();
+					   if(PIN==pin)
 					   {
-						   System.out.println("Amount:"+ea);
+						   System.out.println("Amount:"+balance);
 					   }
 					   else
 				       {
-						   System.out.print("INCORRECT PIN");  					   
+						   System.out.println("INCORRECT PIN");  					   
 				       }
 			   }				  				
 			   break;
