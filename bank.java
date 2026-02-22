@@ -1,15 +1,14 @@
-package banking;
+age banking;
 import java.util.*;
-public class bank {
-
+public class bank 
+{
 	public static void main(String[] args) 
 	{
-		int pin=2123;
-		int option;
+		int storedPin=2123;
 		int eac;  //Enter ATM card
 		int balance=5000;
 		int amount;
-		int PIN=0;
+		int enteredPin=0;
 		int depositamount=0;
 		int i,count=0;
 		int newPIN;
@@ -23,9 +22,9 @@ public class bank {
 		eac=sc.nextInt();
 		if (eac!=0)
 		{
-			 System.out.println("1.WITHDRAW\t 2.DEPOSIT\n 3.CHANGE PIN\t 4.CHECK BALANCE\n 5.EXIT");
+			 System.out.println("1.WITHDRAW\t 2.DEPOSIT\n 3.CHANGE PIN\t 4.CHECK BALANCE \n 5.EXIT");
 			   System.out.println("ENTER OPTION:");
-			   option=sc.nextInt();
+			   int option=sc.nextInt();
 			   switch(option)
 			   {
 			   case 1://withdraw
@@ -33,13 +32,13 @@ public class bank {
 				   System.out.println("ENTER AMOUNT:");
 				   amount=sc.nextInt();
 				   System.out.println("Enter pin:");
-				   PIN=sc.nextInt();
-				   if(PIN==pin)
+				   enteredPin=sc.nextInt();
+				   if(enteredPin==storedPin)
 				   {
 					   if(amount<=balance)
 					   {
 						   balance=balance-amount;
-						   System.out.println("Please collect your amount:"+amount);
+						   System.out.println("Please collect your amount "+amount);
 					   }
 					   else
 					   {
@@ -57,11 +56,11 @@ public class bank {
 				   System.out.println("Enter Amount:");
 				   amount=sc.nextInt();
 				   System.out.println("Enter Pin:");
-				   PIN=sc.nextInt();
-				   if(PIN==pin)
+				   enteredPin=sc.nextInt();
+				   if(enteredPin==storedPin)
 				   {
 					   balance=balance+amount;
-					   System.out.println("YOUR AMOUNT IS DEPOSITED: "+balance);
+					   System.out.println("Your amount is deposited: "+balance);
 					   break;
 				   }
 				   else
@@ -73,8 +72,8 @@ public class bank {
 			 case 3://change pin
 			   {
 				   System.out.println("Enter the old pin:");
-				   PIN=sc.nextInt();
-				   if(PIN==pin)
+				   enteredPin=sc.nextInt();
+				   if(enteredPin==storedPin)
 				   {
 					   System.out.println("Enter new pin:");
 					   newPIN=sc.nextInt();
@@ -86,7 +85,7 @@ public class bank {
 						   userOTP=sc.nextInt();
 						   if(OTP==userOTP)
 						   {
-							   pin=newPIN;
+							   storedPin=newPIN;
 							   System.out.println("Successfully pin is changed");
 						   }
 						   else
@@ -108,8 +107,8 @@ public class bank {
 			   case 4://check balance
 			   {
 				   System.out.println("ENTER THE PIN:");
-				   PIN=sc.nextInt();
-					   if(PIN==pin)
+				   enteredPin=sc.nextInt();
+					   if(enteredPin==storedPin)
 					   {
 						   System.out.println("Amount:"+balance);
 					   }
@@ -119,9 +118,11 @@ public class bank {
 				       }
 			   }				  				
 			   break;
-			   case 5:// exit
-					   System.out.println("Thank you for using the ATM");
-					   System.exit(0);
+			   case 5:
+			   {
+				   System.out.println("Thank you for using the ATM");
+				   System.exit(0);
+			   }
 			  default:
 			   {
 				   System.out.println("INVALID OPTION");
@@ -131,5 +132,6 @@ public class bank {
 		}
 	}
 }
+
 
 
